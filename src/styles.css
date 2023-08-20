@@ -1,6 +1,10 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  margin-top: -22px;
+  font-family: sans-serif;
+  min-height: 100vh;
+  padding-left: 1rem;
 }
 
 .light-mode {
@@ -11,4 +15,45 @@
 .dark-mode {
   background-color: #222222;
   color: #ffffff;
+}
+.header {
+  padding: 0.5rem;
+  width: 100%;
+  color: coral;
+  font-size: 36px;
+}
+
+button {
+  font-size: 20px;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: rgb(20, 120, 234);
+  color: white;
+  margin: 1rem 0;
+  border: none;
+}
+
+.ques {
+  background: #888;
+  font-size: 20px;
+  border: 1px solid black;
+  color: white;
+  padding: 0.5em;
+}
+li {
+  list-style-type: upper-alpha;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+li:hover {
+  background-color: #414143;
+  color: rgb(255, 255, 255);
+}
+
+.container {
+  padding: 1rem;
+}
+
+hr {
+  padding-top: 1rem;
 }

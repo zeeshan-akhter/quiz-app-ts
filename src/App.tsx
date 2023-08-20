@@ -10,23 +10,29 @@ import { useTheme } from "./context/ThemeContext";
 export const initialState: AppState = {
   quizData: quizData,
   currentQuestionIndex: 0,
-  score: 0
+  score: 0,
 };
 
 const App: React.FC = () => {
   const [state, dispatch] = useReducer(quizReducer, initialState);
   const { theme, toggleTheme } = useTheme();
   return (
-    <div className={theme === "light" ? "light-mode" : "dark-mode"}>
+    <div className={`${theme === "light" ? "light-mode" : "dark-mode"} App `}>
       <Header title="Quiz App" />
       <button onClick={toggleTheme}>Toggle theme</button>
+      <hr/>
       {state.currentQuestionIndex < state.quizData.length ? (
-        <Quiz
-          quiz={state.quizData[state.currentQuestionIndex]}
-          onOptionClick={(selectedOption) =>
-            dispatch({ type: "ATTEMPTED", selectedOption })
-          }
-        />
+        <>
+          <span className="ques">
+            Question {state.currentQuestionIndex + 1}{" "}
+          </span>
+          <Quiz
+            quiz={state.quizData[state.currentQuestionIndex]}
+            onOptionClick={(selectedOption) =>
+              dispatch({ type: "ATTEMPTED", selectedOption })
+            }
+          />
+        </>
       ) : (
         <Score
           currentScore={state.score}

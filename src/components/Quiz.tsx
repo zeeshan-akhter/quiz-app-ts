@@ -12,7 +12,7 @@ interface QuizProps {
 const Quiz: React.FC<QuizProps> = ({ quiz, onOptionClick }) => {
   return (
     <div>
-      <p>{quiz.question}</p>
+      <p className="container">{quiz.question}</p>
       <ul>
         {quiz.options.map((option, index) => (
           <li key={index} onClick={() => onOptionClick(index)}>
